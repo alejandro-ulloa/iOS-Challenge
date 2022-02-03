@@ -10,13 +10,16 @@
 		5E1AAE9827806847A251C428 /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B323193901C098ADFE3BF10C /* Pods_iOS_Challenge.framework */; };
 		62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073A27AB4471005488BF /* AppDelegate.swift */; };
 		62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073C27AB4471005488BF /* SceneDelegate.swift */; };
-		62EC073F27AB4471005488BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073E27AB4471005488BF /* ViewController.swift */; };
-		62EC074227AB4471005488BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074027AB4471005488BF /* Main.storyboard */; };
 		62EC074427AB4471005488BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074327AB4471005488BF /* Assets.xcassets */; };
 		62EC074727AB4471005488BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074527AB4471005488BF /* LaunchScreen.storyboard */; };
 		62EC075227AB4471005488BF /* iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC075127AB4471005488BF /* iOS_ChallengeTests.swift */; };
 		62EC075C27AB4471005488BF /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC075B27AB4471005488BF /* iOS_ChallengeUITests.swift */; };
 		62EC075E27AB4471005488BF /* iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC075D27AB4471005488BF /* iOS_ChallengeUITestsLaunchTests.swift */; };
+		62EC077227AB507A005488BF /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC077127AB507A005488BF /* HomeCoordinator.swift */; };
+		62EC077427AB50F6005488BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC077327AB50F6005488BF /* HomeViewModel.swift */; };
+		62EC077627AB5102005488BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC077527AB5102005488BF /* HomeViewController.swift */; };
+		62EC077827AB5193005488BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC077727AB5193005488BF /* BaseViewController.swift */; };
+		62EC077A27AB51A7005488BF /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC077927AB51A7005488BF /* BindableType.swift */; };
 		92C97B533FA710087DD293CA /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63572EDEFF30981E414A1812 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */; };
 		B9D4C57A13E0E7E219321048 /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F444AD596789BE17423B6D3C /* Pods_iOS_ChallengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,8 +47,6 @@
 		62EC073727AB4471005488BF /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC073A27AB4471005488BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62EC073C27AB4471005488BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		62EC073E27AB4471005488BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		62EC074127AB4471005488BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62EC074327AB4471005488BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62EC074627AB4471005488BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62EC074827AB4471005488BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +55,11 @@
 		62EC075727AB4471005488BF /* iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC075B27AB4471005488BF /* iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		62EC075D27AB4471005488BF /* iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		62EC077127AB507A005488BF /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		62EC077327AB50F6005488BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		62EC077527AB5102005488BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		62EC077727AB5193005488BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		62EC077927AB51A7005488BF /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		63572EDEFF30981E414A1812 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Challenge_iOS_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AA69EE1F80DA77C2508BC8 /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A543E1F139BE57DCFA3EA9F4 /* Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,13 +145,13 @@
 		62EC073927AB4471005488BF /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				62EC074827AB4471005488BF /* Info.plist */,
 				62EC073A27AB4471005488BF /* AppDelegate.swift */,
 				62EC073C27AB4471005488BF /* SceneDelegate.swift */,
-				62EC073E27AB4471005488BF /* ViewController.swift */,
-				62EC074027AB4471005488BF /* Main.storyboard */,
 				62EC074327AB4471005488BF /* Assets.xcassets */,
+				62EC076A27AB4F3D005488BF /* Common */,
+				62EC076D27AB4F78005488BF /* Home */,
 				62EC074527AB4471005488BF /* LaunchScreen.storyboard */,
-				62EC074827AB4471005488BF /* Info.plist */,
 			);
 			path = "iOS-Challenge";
 			sourceTree = "<group>";
@@ -165,6 +171,65 @@
 				62EC075D27AB4471005488BF /* iOS_ChallengeUITestsLaunchTests.swift */,
 			);
 			path = "iOS-ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		62EC076A27AB4F3D005488BF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				62EC076C27AB4F53005488BF /* UIComponents */,
+				62EC076B27AB4F46005488BF /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		62EC076B27AB4F46005488BF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				62EC077927AB51A7005488BF /* BindableType.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		62EC076C27AB4F53005488BF /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				62EC077727AB5193005488BF /* BaseViewController.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		62EC076D27AB4F78005488BF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				62EC076E27AB4F89005488BF /* Coordinator */,
+				62EC076F27AB4F91005488BF /* View */,
+				62EC077027AB4FA5005488BF /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		62EC076E27AB4F89005488BF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				62EC077127AB507A005488BF /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		62EC076F27AB4F91005488BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62EC077527AB5102005488BF /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		62EC077027AB4FA5005488BF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				62EC077327AB50F6005488BF /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +343,6 @@
 			files = (
 				62EC074727AB4471005488BF /* LaunchScreen.storyboard in Resources */,
 				62EC074427AB4471005488BF /* Assets.xcassets in Resources */,
-				62EC074227AB4471005488BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,8 +470,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62EC073F27AB4471005488BF /* ViewController.swift in Sources */,
+				62EC077A27AB51A7005488BF /* BindableType.swift in Sources */,
+				62EC077627AB5102005488BF /* HomeViewController.swift in Sources */,
+				62EC077427AB50F6005488BF /* HomeViewModel.swift in Sources */,
+				62EC077227AB507A005488BF /* HomeCoordinator.swift in Sources */,
 				62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */,
+				62EC077827AB5193005488BF /* BaseViewController.swift in Sources */,
 				62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,14 +513,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		62EC074027AB4471005488BF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				62EC074127AB4471005488BF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		62EC074527AB4471005488BF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -593,7 +653,8 @@
 				INFOPLIST_FILE = "iOS-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -623,7 +684,8 @@
 				INFOPLIST_FILE = "iOS-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;

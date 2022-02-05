@@ -8,3 +8,8 @@
 
 
 "generic_error" = "Error, please try again later";
+
+// Tabs
+
+"shows_tab" = "All Shows";
+"favorites_tab" = "Favorites";

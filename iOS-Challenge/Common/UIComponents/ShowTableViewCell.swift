@@ -14,6 +14,7 @@ class ShowTableViewCell: UITableViewCell {
     
     static let identifier = "showCell"
     
+    var show: Show?
     let showImageView = UIImageView()
     let nameLabel = UILabel()
     
@@ -55,11 +56,11 @@ class ShowTableViewCell: UITableViewCell {
     }
     
     func setUp(show: Show) {
+        self.show = show
         if let imageURLString = show.image?.medium, let imageURL = URL(string: imageURLString) {
             showImageView.kf.setImage(with: imageURL)
         }
         nameLabel.text = show.name
-        
     }
     
     

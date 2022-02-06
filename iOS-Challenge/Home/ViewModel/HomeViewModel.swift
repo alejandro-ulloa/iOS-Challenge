@@ -8,9 +8,11 @@
 import RxSwift
 import Action
 import RxCocoa
+import XCoordinator
 
-
-class HomeViewModel {
+final class HomeViewModel {
+    
+    var router: StrongRouter<HomeRoute>
     
     let showsService = ShowService()
     
@@ -18,7 +20,8 @@ class HomeViewModel {
     var currentPage = 0
     let showsSubject = PublishSubject<[Show]>()
     
-    init() {
+    init(router: StrongRouter<HomeRoute>) {
+        self.router = router
         getShowsAction.execute(currentPage)
     }
     
@@ -35,6 +38,11 @@ class HomeViewModel {
                 self.showsSubject.onNext(self.shows)
                 return Observable.empty()
             }
+    }
+    
+    lazy var goToShowDetailsAction = Action<Int, Void> { [weak self] showId in
+        guard let self = self else { return Observable.empty() }
+        return self.router.rx.trigger(.showDetails(showId: showId))
     }
     
     func getNextPage() {

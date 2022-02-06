@@ -9,22 +9,28 @@ import Foundation
 import XCoordinator
 
 enum HomeRoute: Route {
-  case home
+    case home
+    case showDetails(showId: Int)
 }
 
 final class HomeCoordinator: NavigationCoordinator<HomeRoute> {
-  
-  init() {
-    super.init(initialRoute: .home)
-  }
-  
-  override func prepareTransition(for route: HomeRoute) -> NavigationTransition {
-    switch route {
-    case .home:
-      let vc = HomeViewController()
-      vc.bind(to: HomeViewModel())
-      return .push(vc)
+    
+    init() {
+        super.init(initialRoute: .home)
     }
-  }
-  
+    
+    override func prepareTransition(for route: HomeRoute) -> NavigationTransition {
+        switch route {
+        case .home:
+            let vc = HomeViewController()
+            vc.bind(to: HomeViewModel(router: strongRouter))
+            return .push(vc)
+            
+        case let .showDetails(showId):
+            let vc = ShowDetailViewController()
+            vc.bind(to: ShowDetailViewModel())
+            return .push(vc)
+        }
+    }
+    
 }

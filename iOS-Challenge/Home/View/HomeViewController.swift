@@ -68,12 +68,17 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
                 cell.setUp(show: element)
                 guard let self = self else { return }
                 if row == self.viewModel.shows.count - 1 {
-                    print("LAST CELL")
                     self.viewModel.getNextPage()
                 }
-                print(row)
             }
             .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                let cell = self.tableView.cellForRow(at: indexPath) as? ShowTableViewCell
+                self.viewModel.goToShowDetailsAction.execute(cell?.show?.id ?? 0)
+            }).disposed(by: disposeBag)
         
     }
 }

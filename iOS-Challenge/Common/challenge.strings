@@ -13,3 +13,9 @@
 
 "shows_tab" = "All Shows";
 "favorites_tab" = "Favorites";
+
+
+// Shows Tab
+
+"shows_title" = "Shows";
+"search_plceholder" = "Search...";

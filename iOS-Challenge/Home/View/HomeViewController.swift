@@ -8,12 +8,28 @@
 import UIKit
 import SnapKit
 
-final class HomeViewController: BaseViewController, BindableType, UISearchBarDelegate {
+final class HomeViewController: BaseViewController, BindableType, UISearchControllerDelegate {
     
     var viewModel: HomeViewModel!
     
     let mainStackView = UIStackView()
-    let searchBar = UISearchBar()
+    let searchController = UISearchController()
+    let tableView = UITableView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchController.delegate = self
+        searchController.hidesNavigationBarDuringPresentation = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.title = "shows_title".localized
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController!.navigationBar.sizeToFit()
+    }
     
     func setUpViews() {
         mainStackView.axis = .vertical
@@ -22,12 +38,11 @@ final class HomeViewController: BaseViewController, BindableType, UISearchBarDel
         mainStackView.backgroundColor = .white
         view.addSubview(mainStackView)
         
-        searchBar.delegate = self
-        mainStackView.addArrangedSubview(searchBar)
+        mainStackView.addArrangedSubview(tableView)
     }
     
     func setUpLabels() {
-        
+        searchController.searchBar.placeholder = "search_plceholder".localized
     }
     
     func setUpConstraints() {
@@ -35,9 +50,8 @@ final class HomeViewController: BaseViewController, BindableType, UISearchBarDel
             $0.edges.equalToSuperview()
         }
         
-        searchBar.snp.makeConstraints {
-            $0.width.equalToSuperview()
-            $0.height.equalTo(60)
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
     

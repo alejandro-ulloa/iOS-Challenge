@@ -16,7 +16,8 @@ target 'iOS-Challenge' do
   pod 'XCoordinator/RxSwift'
   pod 'Swinject'
   pod 'SnapKit'
-  pod "RxGesture"
+  pod 'RxGesture'
+  pod 'Kingfisher'
   # Pods for iOS-Challenge
 
   target 'iOS-ChallengeTests' do

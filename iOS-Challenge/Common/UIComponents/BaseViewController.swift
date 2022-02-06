@@ -9,7 +9,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
   
-  let backgroundColor: UIColor = .green
+  let backgroundColor: UIColor = .white
   
   override func viewDidLoad() {
     super.viewDidLoad()

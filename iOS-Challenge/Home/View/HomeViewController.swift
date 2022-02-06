@@ -5,24 +5,44 @@
 //  Created by Alejandro Ulloa on 2022-02-02.
 //
 
-final class HomeViewController: BaseViewController, BindableType {
-  
-  var viewModel: HomeViewModel!
-  
-  func setUpViews() {
+import UIKit
+import SnapKit
+
+final class HomeViewController: BaseViewController, BindableType, UISearchBarDelegate {
     
-  }
-  
-  func setUpLabels() {
+    var viewModel: HomeViewModel!
     
-  }
-  
-  func setUpConstraints() {
+    let mainStackView = UIStackView()
+    let searchBar = UISearchBar()
     
-  }
-  
-  func bindViewModel() {
+    func setUpViews() {
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fillProportionally
+        mainStackView.alignment = .center
+        mainStackView.backgroundColor = .white
+        view.addSubview(mainStackView)
+        
+        searchBar.delegate = self
+        mainStackView.addArrangedSubview(searchBar)
+    }
     
-      
-  }
+    func setUpLabels() {
+        
+    }
+    
+    func setUpConstraints() {
+        mainStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        searchBar.snp.makeConstraints {
+            $0.width.equalToSuperview()
+            $0.height.equalTo(60)
+        }
+    }
+    
+    func bindViewModel() {
+        
+        
+    }
 }

@@ -42,10 +42,6 @@ class ShowTableViewCell: UITableViewCell {
     
     private func setUpConstraints() {
         
-        contentView.snp.makeConstraints {
-            $0.height.equalTo(70)
-        }
-        
         showImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(30)
@@ -59,7 +55,7 @@ class ShowTableViewCell: UITableViewCell {
     }
     
     func setUp(show: Show) {
-        if let imageURL = URL(string: show.image.medium) {
+        if let imageURLString = show.image?.medium, let imageURL = URL(string: imageURLString) {
             showImageView.kf.setImage(with: imageURL)
         }
         nameLabel.text = show.name

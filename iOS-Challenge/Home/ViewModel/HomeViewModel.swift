@@ -15,10 +15,11 @@ class HomeViewModel {
     let showsService = ShowService()
     
     var shows: [Show] = []
+    var currentPage = 0
     let showsSubject = PublishSubject<[Show]>()
     
     init() {
-        getShowsAction.execute(0)
+        getShowsAction.execute(currentPage)
     }
     
     lazy var getShowsAction = Action<Int, Void> { [weak self] page in
@@ -34,5 +35,10 @@ class HomeViewModel {
                 self.showsSubject.onNext(self.shows)
                 return Observable.empty()
             }
+    }
+    
+    func getNextPage() {
+        currentPage = currentPage + 1
+        getShowsAction.execute(currentPage)
     }
 }

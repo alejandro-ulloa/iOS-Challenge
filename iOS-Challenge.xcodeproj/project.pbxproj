@@ -17,6 +17,9 @@
 		62C134D827B043CA0026FABE /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D727B043CA0026FABE /* ShowTableViewCell.swift */; };
 		62C134DA27B07CE80026FABE /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D927B07CE80026FABE /* ShowDetailViewController.swift */; };
 		62C134DC27B07CF20026FABE /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DB27B07CF20026FABE /* ShowDetailViewModel.swift */; };
+		62C134DE27B088570026FABE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DD27B088570026FABE /* Image.swift */; };
+		62C134E027B088690026FABE /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DF27B088690026FABE /* Episode.swift */; };
+		62C134E227B0899D0026FABE /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E127B0899D0026FABE /* Schedule.swift */; };
 		62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073A27AB4471005488BF /* AppDelegate.swift */; };
 		62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073C27AB4471005488BF /* SceneDelegate.swift */; };
 		62EC074427AB4471005488BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074327AB4471005488BF /* Assets.xcassets */; };
@@ -62,6 +65,9 @@
 		62C134D727B043CA0026FABE /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 		62C134D927B07CE80026FABE /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
 		62C134DB27B07CF20026FABE /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
+		62C134DD27B088570026FABE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		62C134DF27B088690026FABE /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		62C134E127B0899D0026FABE /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		62EC073727AB4471005488BF /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC073A27AB4471005488BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62EC073C27AB4471005488BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				62C134C927AED94C0026FABE /* Show.swift */,
+				62C134DD27B088570026FABE /* Image.swift */,
+				62C134DF27B088690026FABE /* Episode.swift */,
+				62C134E127B0899D0026FABE /* Schedule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -539,9 +548,12 @@
 				62C134D827B043CA0026FABE /* ShowTableViewCell.swift in Sources */,
 				62C134D227AEE3390026FABE /* String+Extension.swift in Sources */,
 				62EC077227AB507A005488BF /* HomeCoordinator.swift in Sources */,
+				62C134DE27B088570026FABE /* Image.swift in Sources */,
 				62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */,
 				62C134D627AEEB6F0026FABE /* HomeTabCoordinator.swift in Sources */,
+				62C134E227B0899D0026FABE /* Schedule.swift in Sources */,
 				62EC077827AB5193005488BF /* BaseViewController.swift in Sources */,
+				62C134E027B088690026FABE /* Episode.swift in Sources */,
 				62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */,
 				62C134CA27AED94C0026FABE /* Show.swift in Sources */,
 				62C134C327AECB3A0026FABE /* NetworkManagerProvider.swift in Sources */,

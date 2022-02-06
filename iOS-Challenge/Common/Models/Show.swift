@@ -7,18 +7,14 @@
 
 import Foundation
 
-class Show: Codable {
+final class Show: Codable {
     
     let id: Int?
     let url: String?
     let name: String?
     let image: Image?
-    
-}
-
-class Image: Codable {
-    
-    let medium: String?
-    let original: String?
+    let genres: [String]?
+    let schedule: Schedule?
+    let summary: String?
     
 }

@@ -11,6 +11,7 @@ import Moya
 enum NetworkManagerProvider {
     case getShows(page: Int)
     case getShowDetails(showId: Int)
+    case getEpisodes(showId: Int)
 }
 
 extension NetworkManagerProvider: TargetType {
@@ -26,12 +27,14 @@ extension NetworkManagerProvider: TargetType {
             return "/shows"
         case let .getShowDetails(showId):
             return "/shows/\(showId)"
+        case let .getEpisodes(showId):
+            return "/shows/\(showId)/episodes"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getShows, .getShowDetails:
+        case .getShows, .getShowDetails, .getEpisodes:
             return .get
         }
     }

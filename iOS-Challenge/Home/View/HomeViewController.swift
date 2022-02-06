@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class HomeViewController: BaseViewController, BindableType, UISearchControllerDelegate {
     
@@ -15,6 +16,8 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
     let mainStackView = UIStackView()
     let searchController = UISearchController()
     let tableView = UITableView()
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,8 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
         mainStackView.backgroundColor = .white
         view.addSubview(mainStackView)
         
+        tableView.tableFooterView = UIView()
+        tableView.register(ShowTableViewCell.self, forCellReuseIdentifier: ShowTableViewCell.identifier)
         mainStackView.addArrangedSubview(tableView)
     }
     
@@ -57,6 +62,12 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
     
     func bindViewModel() {
         
+        viewModel
+            .showsSubject
+            .bind(to: tableView.rx.items(cellIdentifier: ShowTableViewCell.identifier, cellType: ShowTableViewCell.self)) {  row, element, cell in
+                cell.setUp(show: element)
+            }
+            .disposed(by: disposeBag)
         
     }
 }

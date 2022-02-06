@@ -12,6 +12,7 @@ import RxSwift
 
 protocol ShowServiceProtocol {
     func getShows(page: Int) -> Single<[Show]>
+    func getShowDetail(showId: Int) -> Single<Show>
 }
 
 class ShowService: ShowServiceProtocol {
@@ -21,5 +22,10 @@ class ShowService: ShowServiceProtocol {
     func getShows(page: Int) -> Single<[Show]> {
         return provider.rx.request(.getShows(page: page))
             .map([Show].self)
+    }
+    
+    func getShowDetail(showId: Int) -> Single<Show> {
+        return provider.rx.request(.getShowDetails(showId: showId))
+            .map(Show.self)
     }
 }

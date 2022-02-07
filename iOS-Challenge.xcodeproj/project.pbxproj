@@ -24,6 +24,7 @@
 		62C134E627B0E7B80026FABE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E527B0E7B80026FABE /* Array+Extension.swift */; };
 		62C134E827B0E8F00026FABE /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E727B0E8F00026FABE /* EpisodeDetailsViewController.swift */; };
 		62C134EA27B0E9220026FABE /* EpisodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E927B0E9220026FABE /* EpisodeDetailsViewModel.swift */; };
+		62C134EC27B0ED310026FABE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134EB27B0ED310026FABE /* UIColor+Extension.swift */; };
 		62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073A27AB4471005488BF /* AppDelegate.swift */; };
 		62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073C27AB4471005488BF /* SceneDelegate.swift */; };
 		62EC074427AB4471005488BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074327AB4471005488BF /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		62C134E527B0E7B80026FABE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		62C134E727B0E8F00026FABE /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
 		62C134E927B0E9220026FABE /* EpisodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewModel.swift; sourceTree = "<group>"; };
+		62C134EB27B0ED310026FABE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		62EC073727AB4471005488BF /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC073A27AB4471005488BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62EC073C27AB4471005488BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				62C134D127AEE3390026FABE /* String+Extension.swift */,
 				62C134E527B0E7B80026FABE /* Array+Extension.swift */,
+				62C134EB27B0ED310026FABE /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				62C134E427B0D8360026FABE /* EpisodeTableViewCell.swift in Sources */,
 				62C134D627AEEB6F0026FABE /* HomeTabCoordinator.swift in Sources */,
 				62C134E227B0899D0026FABE /* Schedule.swift in Sources */,
+				62C134EC27B0ED310026FABE /* UIColor+Extension.swift in Sources */,
 				62EC077827AB5193005488BF /* BaseViewController.swift in Sources */,
 				62C134E027B088690026FABE /* Episode.swift in Sources */,
 				62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */,

@@ -25,6 +25,7 @@
 		62C134E827B0E8F00026FABE /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E727B0E8F00026FABE /* EpisodeDetailsViewController.swift */; };
 		62C134EA27B0E9220026FABE /* EpisodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E927B0E9220026FABE /* EpisodeDetailsViewModel.swift */; };
 		62C134EC27B0ED310026FABE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134EB27B0ED310026FABE /* UIColor+Extension.swift */; };
+		62C134EE27B0FD2A0026FABE /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134ED27B0FD2A0026FABE /* SearchResult.swift */; };
 		62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073A27AB4471005488BF /* AppDelegate.swift */; };
 		62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073C27AB4471005488BF /* SceneDelegate.swift */; };
 		62EC074427AB4471005488BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074327AB4471005488BF /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		62C134E727B0E8F00026FABE /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
 		62C134E927B0E9220026FABE /* EpisodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewModel.swift; sourceTree = "<group>"; };
 		62C134EB27B0ED310026FABE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		62C134ED27B0FD2A0026FABE /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		62EC073727AB4471005488BF /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC073A27AB4471005488BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62EC073C27AB4471005488BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,10 +176,11 @@
 		62C134C827AED92D0026FABE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				62C134C927AED94C0026FABE /* Show.swift */,
-				62C134DD27B088570026FABE /* Image.swift */,
 				62C134DF27B088690026FABE /* Episode.swift */,
+				62C134DD27B088570026FABE /* Image.swift */,
 				62C134E127B0899D0026FABE /* Schedule.swift */,
+				62C134C927AED94C0026FABE /* Show.swift */,
+				62C134ED27B0FD2A0026FABE /* SearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,8 +188,8 @@
 		62C134D027AEE26F0026FABE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				62C134D127AEE3390026FABE /* String+Extension.swift */,
 				62C134E527B0E7B80026FABE /* Array+Extension.swift */,
+				62C134D127AEE3390026FABE /* String+Extension.swift */,
 				62C134EB27B0ED310026FABE /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
@@ -270,8 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				62EC077727AB5193005488BF /* BaseViewController.swift */,
-				62C134D727B043CA0026FABE /* ShowTableViewCell.swift */,
 				62C134E327B0D8360026FABE /* EpisodeTableViewCell.swift */,
+				62C134D727B043CA0026FABE /* ShowTableViewCell.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				62C134D227AEE3390026FABE /* String+Extension.swift in Sources */,
 				62EC077227AB507A005488BF /* HomeCoordinator.swift in Sources */,
 				62C134EA27B0E9220026FABE /* EpisodeDetailsViewModel.swift in Sources */,
+				62C134EE27B0FD2A0026FABE /* SearchResult.swift in Sources */,
 				62C134DE27B088570026FABE /* Image.swift in Sources */,
 				62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */,
 				62C134E827B0E8F00026FABE /* EpisodeDetailsViewController.swift in Sources */,

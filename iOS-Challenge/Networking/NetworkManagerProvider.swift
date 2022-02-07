@@ -12,6 +12,7 @@ enum NetworkManagerProvider {
     case getShows(page: Int)
     case getShowDetails(showId: Int)
     case getEpisodes(showId: Int)
+    case searchShows(query: String)
 }
 
 extension NetworkManagerProvider: TargetType {
@@ -25,16 +26,21 @@ extension NetworkManagerProvider: TargetType {
         switch self {
         case .getShows:
             return "/shows"
+            
         case let .getShowDetails(showId):
             return "/shows/\(showId)"
+            
         case let .getEpisodes(showId):
             return "/shows/\(showId)/episodes"
+            
+        case .searchShows:
+            return "/search/shows"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getShows, .getShowDetails, .getEpisodes:
+        case .getShows, .getShowDetails, .getEpisodes, .searchShows:
             return .get
         }
     }
@@ -48,6 +54,9 @@ extension NetworkManagerProvider: TargetType {
         switch self {
         case let .getShows(page):
             return .requestParameters(parameters: ["page" : page], encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets))
+            
+        case let .searchShows(query):
+            return .requestParameters(parameters: ["q" : query], encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets))
             
         default:
             return .requestPlain

@@ -20,6 +20,8 @@ final class HomeViewModel {
     var currentPage = 0
     let showsSubject = PublishSubject<[Show]>()
     
+    let disposeBag = DisposeBag()
+    
     init(router: StrongRouter<HomeRoute>) {
         self.router = router
         getShowsAction.execute(currentPage)
@@ -36,6 +38,24 @@ final class HomeViewModel {
             .flatMap { response -> Observable<Void> in
                 self.shows.append(contentsOf: response)
                 self.showsSubject.onNext(self.shows)
+                return Observable.empty()
+            }
+    }
+    
+    lazy var searchShowsAction = Action<String, Void> { [weak self] query in
+        guard let self = self else { return Observable.empty() }
+        if query.isEmpty {
+            self.showsSubject.onNext(self.shows)
+            return Observable.empty()
+        }
+        return self.showsService.searchShows(query: query)
+            .do( onError: { error -> Void in
+                debugPrint(error.localizedDescription)
+                return
+            })
+            .asObservable()
+            .flatMap { response -> Observable<Void> in
+                self.showsSubject.onNext(response.map{ $0.show })
                 return Observable.empty()
             }
     }

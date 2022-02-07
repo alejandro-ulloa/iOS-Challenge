@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RxSwift
 
-final class HomeViewController: BaseViewController, BindableType, UISearchControllerDelegate {
+final class HomeViewController: BaseViewController, BindableType, UISearchResultsUpdating {
     
     var viewModel: HomeViewModel!
     
@@ -21,7 +21,7 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController.delegate = self
+        searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -84,5 +84,11 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
                 }
             }).disposed(by: disposeBag)
         
+    }
+    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        viewModel.searchShowsAction.execute(text)
     }
 }

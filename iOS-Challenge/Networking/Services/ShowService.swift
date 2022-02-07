@@ -14,6 +14,7 @@ protocol ShowServiceProtocol {
     func getShows(page: Int) -> Single<[Show]>
     func getShowDetail(showId: Int) -> Single<Show>
     func getEpisodes(showId: Int) -> Single<[Episode]>
+    func searchShows(query: String) -> Single<[SearchResult]>
 }
 
 class ShowService: ShowServiceProtocol {
@@ -34,4 +35,11 @@ class ShowService: ShowServiceProtocol {
         return provider.rx.request(.getEpisodes(showId: showId))
             .map([Episode].self)
     }
+    
+    func searchShows(query: String)-> Single<[SearchResult]> {
+        return provider.rx.request(.searchShows(query: query))
+            .map([SearchResult].self)
+    }
+    
+    
 }

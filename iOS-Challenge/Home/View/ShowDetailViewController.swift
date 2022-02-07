@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import Kingfisher
+import RxSwift
 
 final class ShowDetailViewController: BaseViewController, BindableType {
     
@@ -32,6 +33,10 @@ final class ShowDetailViewController: BaseViewController, BindableType {
     
     let summaryLabel = UILabel()
     
+    let  episodesTableView = UITableView()
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = []
@@ -41,7 +46,7 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         view.addSubview(scrollView)
         
         mainStackView.axis = .vertical
-        mainStackView.distribution = .fillProportionally
+        mainStackView.distribution = .fill
         mainStackView.alignment = .center
         mainStackView.spacing = 20
         scrollView.addSubview(mainStackView)
@@ -103,6 +108,17 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         summaryLabel.font = .systemFont(ofSize: 12)
         mainStackView.addArrangedSubview(summaryLabel)
         
+        
+        episodesTableView.rx.observe(CGSize.self, "contentSize")
+            .subscribe(onNext: { [episodesTableView] size in
+                episodesTableView.snp.updateConstraints { $0.height.equalTo(size?.height ?? 0) }
+            })
+            .disposed(by: disposeBag)
+        episodesTableView.rowHeight = 40
+        episodesTableView.isScrollEnabled = false
+        episodesTableView.register(EpisodeTableViewCell.self, forCellReuseIdentifier: EpisodeTableViewCell.identifier)
+        mainStackView.addArrangedSubview(episodesTableView)
+        
     }
     
     func setUpLabels() {
@@ -126,7 +142,9 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         }
         
         mainStackView.snp.makeConstraints {
-            $0.edges.equalTo(view).inset(UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15))
+            $0.top.bottom.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 15, bottom: 0, right: 15))
+            $0.width.equalTo(view)
+            $0.centerX.equalTo(view)
         }
         
         topStackView.snp.makeConstraints {
@@ -145,10 +163,20 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         summaryLabel.snp.makeConstraints {
             $0.width.equalToSuperview()
         }
+        
+        episodesTableView.snp.makeConstraints {
+            $0.width.equalToSuperview()
+        }
     }
     
     func bindViewModel() {
         
+        viewModel
+            .episodesSubject
+            .bind(to: episodesTableView.rx.items(cellIdentifier: EpisodeTableViewCell.identifier, cellType: EpisodeTableViewCell.self)) {  row, element, cell in
+                cell.setUp(episode: element)
+            }
+            .disposed(by: disposeBag)
     }
 }
 

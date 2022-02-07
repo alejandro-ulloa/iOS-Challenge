@@ -33,12 +33,9 @@ class ShowTableViewCell: UITableViewCell {
     }
     
     private func setUpViews() {
-        
         showImageView.contentMode = .scaleAspectFit
         contentView.addSubview(showImageView)
-        
         contentView.addSubview(nameLabel)
-        
     }
     
     private func setUpConstraints() {
@@ -62,7 +59,4 @@ class ShowTableViewCell: UITableViewCell {
         }
         nameLabel.text = show.name
     }
-    
-    
-    
 }

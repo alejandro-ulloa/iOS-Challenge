@@ -20,8 +20,15 @@ final class ShowDetailViewController: BaseViewController, BindableType {
     let topStackView = UIStackView()
     let showImageView = UIImageView()
     let detailStackView = UIStackView()
+    let genresStackView = UIStackView()
     let genresTitleLabel = UILabel()
     let genresLabel = UILabel()
+    let scheduleStackView = UIStackView()
+    let scheduleTitleLabel = UILabel()
+    let timeTitleLabel = UILabel()
+    let timeLabel = UILabel()
+    let daysTitleLabel = UILabel()
+    let daysLabel = UILabel()
     
     let summaryLabel = UILabel()
     
@@ -50,16 +57,46 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         
         detailStackView.axis = .vertical
         detailStackView.distribution = .fillProportionally
-        detailStackView.alignment = .leading
-        detailStackView.spacing = 10
+        detailStackView.alignment = .fill
+        detailStackView.spacing = 15
         topStackView.addArrangedSubview(detailStackView)
         
+        genresStackView.axis = .vertical
+        genresStackView.distribution = .fillProportionally
+        genresStackView.alignment = .fill
+        genresStackView.spacing = 5
+        detailStackView.addArrangedSubview(genresStackView)
+        
         genresTitleLabel.font = .systemFont(ofSize: 14, weight: .bold)
-        detailStackView.addArrangedSubview(genresTitleLabel)
+        genresTitleLabel.textAlignment = .center
+        genresStackView.addArrangedSubview(genresTitleLabel)
         
         genresLabel.numberOfLines = 0
         genresLabel.font = .systemFont(ofSize: 12)
-        detailStackView.addArrangedSubview(genresLabel)
+        genresStackView.addArrangedSubview(genresLabel)
+        
+        scheduleStackView.axis = .vertical
+        scheduleStackView.distribution = .fillProportionally
+        scheduleStackView.alignment = .fill
+        scheduleStackView.spacing = 5
+        detailStackView.addArrangedSubview(scheduleStackView)
+        
+        scheduleTitleLabel.font = .systemFont(ofSize: 14, weight: .bold)
+        scheduleTitleLabel.textAlignment = .center
+        scheduleStackView.addArrangedSubview(scheduleTitleLabel)
+        
+        timeTitleLabel.font = .systemFont(ofSize: 12, weight: .bold)
+        scheduleStackView.addArrangedSubview(timeTitleLabel)
+        
+        timeLabel.numberOfLines = 0
+        timeLabel.font = .systemFont(ofSize: 12)
+        scheduleStackView.addArrangedSubview(timeLabel)
+        
+        daysTitleLabel.font = .systemFont(ofSize: 12, weight: .bold)
+        scheduleStackView.addArrangedSubview(daysTitleLabel)
+        
+        daysLabel.font = .systemFont(ofSize: 12)
+        scheduleStackView.addArrangedSubview(daysLabel)
         
         summaryLabel.numberOfLines = 0
         summaryLabel.textAlignment = .justified
@@ -75,6 +112,11 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         }
         genresTitleLabel.text = "genre_label".localized
         genresLabel.text = viewModel.show.genres?.joined(separator: ", ")
+        scheduleTitleLabel.text = "schedule_label".localized
+        timeTitleLabel.text = "time_label".localized
+        timeLabel.text = viewModel.show.schedule?.time
+        daysTitleLabel.text = "days_label".localized
+        daysLabel.text = viewModel.show.schedule?.days?.joined(separator: ", ")
         summaryLabel.text = viewModel.show.summary?.htmlTransform()
     }
     
@@ -90,6 +132,14 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         topStackView.snp.makeConstraints {
             $0.width.equalTo(mainStackView)
             $0.height.equalTo(view).multipliedBy(0.35)
+        }
+        
+        genresTitleLabel.snp.makeConstraints {
+            $0.width.equalToSuperview()
+        }
+        
+        scheduleTitleLabel.snp.makeConstraints {
+            $0.width.equalToSuperview()
         }
         
         summaryLabel.snp.makeConstraints {

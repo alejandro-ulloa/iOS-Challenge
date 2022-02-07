@@ -23,3 +23,6 @@
 // Show
 
 "genre_label" = "Genres";
+"schedule_label" = "Schedule";
+"time_label" = "Time:";
+"days_label" = "Days:";

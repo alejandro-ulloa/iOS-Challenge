@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 import RxSwift
+import RxDataSources
 
 final class ShowDetailViewController: BaseViewController, BindableType {
     
@@ -108,7 +109,6 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         summaryLabel.font = .systemFont(ofSize: 12)
         mainStackView.addArrangedSubview(summaryLabel)
         
-        
         episodesTableView.rx.observe(CGSize.self, "contentSize")
             .subscribe(onNext: { [episodesTableView] size in
                 episodesTableView.snp.updateConstraints { $0.height.equalTo(size?.height ?? 0) }
@@ -170,12 +170,30 @@ final class ShowDetailViewController: BaseViewController, BindableType {
     }
     
     func bindViewModel() {
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Episode>>(
+            configureCell: { (_, table, indexPath, element) in
+                if let cell = table.dequeueReusableCell(withIdentifier: EpisodeTableViewCell.identifier) as? EpisodeTableViewCell {
+                    cell.setUp(episode: element)
+                    return cell
+                }
+                return UITableViewCell()
+            },
+            titleForHeaderInSection: { dataSource, sectionIndex in
+                return dataSource[sectionIndex].model
+            }
+        )
         
         viewModel
             .episodesSubject
-            .bind(to: episodesTableView.rx.items(cellIdentifier: EpisodeTableViewCell.identifier, cellType: EpisodeTableViewCell.self)) {  row, element, cell in
-                cell.setUp(episode: element)
-            }
+            .map({ [weak self] episodes -> [SectionModel<String, Episode>] in
+                var model: [SectionModel<String, Episode>] = []
+                
+                self?.viewModel.seasons.forEach { season in
+                    model.append(SectionModel(model: "Season \(season)", items: episodes.filter { $0.season == season }))
+                }
+                return model
+            })
+            .bind(to: episodesTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
 }

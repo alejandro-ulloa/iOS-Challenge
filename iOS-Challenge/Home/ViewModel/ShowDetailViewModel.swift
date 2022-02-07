@@ -17,12 +17,20 @@ final class ShowDetailViewModel {
     let showsService = ShowService()
     
     var show: Show
+    var seasons: [Int] = []
     let episodesSubject = PublishSubject<[Episode]>()
+    
+    let disposeBag = DisposeBag()
     
     init(router: StrongRouter<HomeRoute>, show: Show) {
         self.router = router
         self.show = show
         getEpisodesAction.execute(show.id)
+        
+        episodesSubject.subscribe(onNext: { [weak self] episodes in
+            self?.seasons = episodes.map { $0.season ?? 0 } .removingDuplicates()
+            print(self?.seasons)
+        }).disposed(by: disposeBag)
     }
     
     lazy var getEpisodesAction = Action<Int?, Void> { [weak self] showId in
@@ -40,4 +48,19 @@ final class ShowDetailViewModel {
             }
     }
     
+}
+
+
+extension Array where Element: Hashable {
+    func removingDuplicates() -> [Element] {
+        var addedDict = [Element: Bool]()
+
+        return filter {
+            addedDict.updateValue(true, forKey: $0) == nil
+        }
+    }
+
+    mutating func removeDuplicates() {
+        self = self.removingDuplicates()
+    }
 }

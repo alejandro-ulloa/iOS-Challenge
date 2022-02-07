@@ -13,7 +13,7 @@
 		62C134CA27AED94C0026FABE /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134C927AED94C0026FABE /* Show.swift */; };
 		62C134D227AEE3390026FABE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D127AEE3390026FABE /* String+Extension.swift */; };
 		62C134D427AEE3660026FABE /* challenge.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62C134D327AEE3660026FABE /* challenge.strings */; };
-		62C134D627AEEB6F0026FABE /* HomeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D527AEEB6F0026FABE /* HomeTabCoordinator.swift */; };
+		62C134D627AEEB6F0026FABE /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D527AEEB6F0026FABE /* MainTabCoordinator.swift */; };
 		62C134D827B043CA0026FABE /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D727B043CA0026FABE /* ShowTableViewCell.swift */; };
 		62C134DA27B07CE80026FABE /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D927B07CE80026FABE /* ShowDetailsViewController.swift */; };
 		62C134DC27B07CF20026FABE /* ShowDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DB27B07CF20026FABE /* ShowDetailsViewModel.swift */; };
@@ -71,7 +71,7 @@
 		62C134C927AED94C0026FABE /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		62C134D127AEE3390026FABE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		62C134D327AEE3660026FABE /* challenge.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = challenge.strings; sourceTree = "<group>"; };
-		62C134D527AEEB6F0026FABE /* HomeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabCoordinator.swift; sourceTree = "<group>"; };
+		62C134D527AEEB6F0026FABE /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		62C134D727B043CA0026FABE /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 		62C134D927B07CE80026FABE /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
 		62C134DB27B07CF20026FABE /* ShowDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -237,6 +237,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		62C134FB27B107BF0026FABE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				62C134D527AEEB6F0026FABE /* MainTabCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		62EC072E27AB4470005488BF = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +278,7 @@
 				62EC076A27AB4F3D005488BF /* Common */,
 				62C134F127B106290026FABE /* Favourites */,
 				62EC076D27AB4F78005488BF /* Home */,
+				62C134FB27B107BF0026FABE /* Main */,
 				62C134C127AECB100026FABE /* Networking */,
 			);
 			path = "iOS-Challenge";
@@ -337,7 +346,6 @@
 			isa = PBXGroup;
 			children = (
 				62EC077127AB507A005488BF /* HomeCoordinator.swift */,
-				62C134D527AEEB6F0026FABE /* HomeTabCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -620,7 +628,7 @@
 				62C134E827B0E8F00026FABE /* EpisodeDetailsViewController.swift in Sources */,
 				62C134E627B0E7B80026FABE /* Array+Extension.swift in Sources */,
 				62C134E427B0D8360026FABE /* EpisodeTableViewCell.swift in Sources */,
-				62C134D627AEEB6F0026FABE /* HomeTabCoordinator.swift in Sources */,
+				62C134D627AEEB6F0026FABE /* MainTabCoordinator.swift in Sources */,
 				62C134F627B106780026FABE /* FavouritesCoordinator.swift in Sources */,
 				62C134E227B0899D0026FABE /* Schedule.swift in Sources */,
 				62C134EC27B0ED310026FABE /* UIColor+Extension.swift in Sources */,

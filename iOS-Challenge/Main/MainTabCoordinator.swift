@@ -1,5 +1,5 @@
 //
-//  HomeTabCoordinator.swift
+//  MainTabCoordinator.swift
 //  iOS-Challenge
 //
 //  Created by Alejandro Ulloa on 2022-02-05.
@@ -9,12 +9,12 @@ import Foundation
 import XCoordinator
 import RxSwift
 
-enum HomeTabRoute: Route {
+enum MainTabRoute: Route {
     case shows
     case favourites
 }
 
-final class HomeTabCoordinator: TabBarCoordinator<HomeRoute> {
+final class MainTabCoordinator: TabBarCoordinator<MainTabRoute> {
     
     init() {
         let homeCoordinator = HomeCoordinator()

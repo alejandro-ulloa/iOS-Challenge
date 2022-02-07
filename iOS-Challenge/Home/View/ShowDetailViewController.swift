@@ -16,17 +16,16 @@ final class ShowDetailViewController: BaseViewController, BindableType {
     
     let scrollView = UIScrollView()
     let mainStackView = UIStackView()
-    var showImageView = UIImageView()
+    
+    let topStackView = UIStackView()
+    let showImageView = UIImageView()
+    let detailStackView = UIStackView()
+    
+    let summaryLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = []
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.sizeToFit()
     }
     
     func setUpViews() {
@@ -34,12 +33,30 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         
         mainStackView.axis = .vertical
         mainStackView.distribution = .fillProportionally
-        mainStackView.alignment = .top
+        mainStackView.alignment = .center
+        mainStackView.spacing = 20
         scrollView.addSubview(mainStackView)
         
+        topStackView.axis = .horizontal
+        topStackView.distribution = .fillEqually
+        topStackView.alignment = .center
+        topStackView.spacing = 10
+        mainStackView.addArrangedSubview(topStackView)
+        
         showImageView.contentMode = .scaleAspectFit
-        view.addSubview(showImageView)
-
+        topStackView.addArrangedSubview(showImageView)
+        
+        detailStackView.axis = .vertical
+        detailStackView.distribution = .fillProportionally
+        detailStackView.alignment = .center
+        detailStackView.backgroundColor = .red
+        topStackView.addArrangedSubview(detailStackView)
+        
+        summaryLabel.numberOfLines = 0
+        summaryLabel.textAlignment = .justified
+        summaryLabel.font = .systemFont(ofSize: 12)
+        mainStackView.addArrangedSubview(summaryLabel)
+        
     }
     
     func setUpLabels() {
@@ -47,7 +64,7 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         if let imageURLString = viewModel.show.image?.original, let imageURL = URL(string: imageURLString) {
             showImageView.kf.setImage(with: imageURL)
         }
-        
+        summaryLabel.text = viewModel.show.summary?.htmlTransform()
     }
     
     func setUpConstraints() {
@@ -56,13 +73,20 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         }
         
         mainStackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalTo(view)
         }
         
-        showImageView.snp.makeConstraints {
-            $0.top.centerX.equalToSuperview()
-            $0.height.equalToSuperview().multipliedBy(0.85)
-//            $0.width.equalTo(view)
+        topStackView.snp.makeConstraints {
+            $0.width.equalTo(mainStackView).multipliedBy(0.9)
+            $0.height.equalTo(view).multipliedBy(0.4)
+        }
+        
+        detailStackView.snp.makeConstraints {
+            $0.height.equalToSuperview()
+        }
+        
+        summaryLabel.snp.makeConstraints {
+            $0.width.equalToSuperview().multipliedBy(0.9)
         }
     }
     
@@ -70,3 +94,4 @@ final class ShowDetailViewController: BaseViewController, BindableType {
         
     }
 }
+

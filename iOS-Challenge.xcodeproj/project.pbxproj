@@ -15,12 +15,15 @@
 		62C134D427AEE3660026FABE /* challenge.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62C134D327AEE3660026FABE /* challenge.strings */; };
 		62C134D627AEEB6F0026FABE /* HomeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D527AEEB6F0026FABE /* HomeTabCoordinator.swift */; };
 		62C134D827B043CA0026FABE /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D727B043CA0026FABE /* ShowTableViewCell.swift */; };
-		62C134DA27B07CE80026FABE /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D927B07CE80026FABE /* ShowDetailViewController.swift */; };
-		62C134DC27B07CF20026FABE /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DB27B07CF20026FABE /* ShowDetailViewModel.swift */; };
+		62C134DA27B07CE80026FABE /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134D927B07CE80026FABE /* ShowDetailsViewController.swift */; };
+		62C134DC27B07CF20026FABE /* ShowDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DB27B07CF20026FABE /* ShowDetailsViewModel.swift */; };
 		62C134DE27B088570026FABE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DD27B088570026FABE /* Image.swift */; };
 		62C134E027B088690026FABE /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134DF27B088690026FABE /* Episode.swift */; };
 		62C134E227B0899D0026FABE /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E127B0899D0026FABE /* Schedule.swift */; };
 		62C134E427B0D8360026FABE /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E327B0D8360026FABE /* EpisodeTableViewCell.swift */; };
+		62C134E627B0E7B80026FABE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E527B0E7B80026FABE /* Array+Extension.swift */; };
+		62C134E827B0E8F00026FABE /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E727B0E8F00026FABE /* EpisodeDetailsViewController.swift */; };
+		62C134EA27B0E9220026FABE /* EpisodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134E927B0E9220026FABE /* EpisodeDetailsViewModel.swift */; };
 		62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073A27AB4471005488BF /* AppDelegate.swift */; };
 		62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073C27AB4471005488BF /* SceneDelegate.swift */; };
 		62EC074427AB4471005488BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074327AB4471005488BF /* Assets.xcassets */; };
@@ -64,12 +67,15 @@
 		62C134D327AEE3660026FABE /* challenge.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = challenge.strings; sourceTree = "<group>"; };
 		62C134D527AEEB6F0026FABE /* HomeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabCoordinator.swift; sourceTree = "<group>"; };
 		62C134D727B043CA0026FABE /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
-		62C134D927B07CE80026FABE /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
-		62C134DB27B07CF20026FABE /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
+		62C134D927B07CE80026FABE /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
+		62C134DB27B07CF20026FABE /* ShowDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewModel.swift; sourceTree = "<group>"; };
 		62C134DD27B088570026FABE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		62C134DF27B088690026FABE /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		62C134E127B0899D0026FABE /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		62C134E327B0D8360026FABE /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		62C134E527B0E7B80026FABE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		62C134E727B0E8F00026FABE /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
+		62C134E927B0E9220026FABE /* EpisodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewModel.swift; sourceTree = "<group>"; };
 		62EC073727AB4471005488BF /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC073A27AB4471005488BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62EC073C27AB4471005488BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				62C134D127AEE3390026FABE /* String+Extension.swift */,
+				62C134E527B0E7B80026FABE /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,7 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				62EC077527AB5102005488BF /* HomeViewController.swift */,
-				62C134D927B07CE80026FABE /* ShowDetailViewController.swift */,
+				62C134D927B07CE80026FABE /* ShowDetailsViewController.swift */,
+				62C134E727B0E8F00026FABE /* EpisodeDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,7 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				62EC077327AB50F6005488BF /* HomeViewModel.swift */,
-				62C134DB27B07CF20026FABE /* ShowDetailViewModel.swift */,
+				62C134DB27B07CF20026FABE /* ShowDetailsViewModel.swift */,
+				62C134E927B0E9220026FABE /* EpisodeDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -542,17 +551,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62C134DC27B07CF20026FABE /* ShowDetailViewModel.swift in Sources */,
+				62C134DC27B07CF20026FABE /* ShowDetailsViewModel.swift in Sources */,
 				62EC077A27AB51A7005488BF /* BindableType.swift in Sources */,
-				62C134DA27B07CE80026FABE /* ShowDetailViewController.swift in Sources */,
+				62C134DA27B07CE80026FABE /* ShowDetailsViewController.swift in Sources */,
 				62C134C727AED8950026FABE /* ShowService.swift in Sources */,
 				62EC077627AB5102005488BF /* HomeViewController.swift in Sources */,
 				62EC077427AB50F6005488BF /* HomeViewModel.swift in Sources */,
 				62C134D827B043CA0026FABE /* ShowTableViewCell.swift in Sources */,
 				62C134D227AEE3390026FABE /* String+Extension.swift in Sources */,
 				62EC077227AB507A005488BF /* HomeCoordinator.swift in Sources */,
+				62C134EA27B0E9220026FABE /* EpisodeDetailsViewModel.swift in Sources */,
 				62C134DE27B088570026FABE /* Image.swift in Sources */,
 				62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */,
+				62C134E827B0E8F00026FABE /* EpisodeDetailsViewController.swift in Sources */,
+				62C134E627B0E7B80026FABE /* Array+Extension.swift in Sources */,
 				62C134E427B0D8360026FABE /* EpisodeTableViewCell.swift in Sources */,
 				62C134D627AEEB6F0026FABE /* HomeTabCoordinator.swift in Sources */,
 				62C134E227B0899D0026FABE /* Schedule.swift in Sources */,

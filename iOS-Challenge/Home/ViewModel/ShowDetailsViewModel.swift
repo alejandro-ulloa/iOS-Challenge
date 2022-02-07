@@ -1,5 +1,5 @@
 //
-//  ShowDetailViewModel.swift
+//  ShowDetailsViewModel.swift
 //  iOS-Challenge
 //
 //  Created by Alejandro Ulloa on 2022-02-06.
@@ -10,7 +10,7 @@ import Action
 import RxCocoa
 import XCoordinator
 
-final class ShowDetailViewModel {
+final class ShowDetailsViewModel {
     
     var router: StrongRouter<HomeRoute>
     
@@ -29,7 +29,6 @@ final class ShowDetailViewModel {
         
         episodesSubject.subscribe(onNext: { [weak self] episodes in
             self?.seasons = episodes.map { $0.season ?? 0 } .removingDuplicates()
-            print(self?.seasons)
         }).disposed(by: disposeBag)
     }
     
@@ -48,19 +47,10 @@ final class ShowDetailViewModel {
             }
     }
     
-}
-
-
-extension Array where Element: Hashable {
-    func removingDuplicates() -> [Element] {
-        var addedDict = [Element: Bool]()
-
-        return filter {
-            addedDict.updateValue(true, forKey: $0) == nil
-        }
+    lazy var goToEpisodeDetailsAction = Action<Episode?, Void> { [weak self] episode in
+        guard let self = self else { return Observable.empty() }
+        guard let episode = episode else { return Observable.empty() }
+        return self.router.rx.trigger(.episodeDetails(episode: episode))
     }
-
-    mutating func removeDuplicates() {
-        self = self.removingDuplicates()
-    }
+    
 }

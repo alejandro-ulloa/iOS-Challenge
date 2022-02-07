@@ -1,5 +1,5 @@
 //
-//  ShowDetailViewController.swift
+//  ShowDetailsViewController.swift
 //  iOS-Challenge
 //
 //  Created by Alejandro Ulloa on 2022-02-06.
@@ -12,9 +12,9 @@ import Kingfisher
 import RxSwift
 import RxDataSources
 
-final class ShowDetailViewController: BaseViewController, BindableType {
+final class ShowDetailsViewController: BaseViewController, BindableType {
     
-    var viewModel: ShowDetailViewModel!
+    var viewModel: ShowDetailsViewModel!
     
     let scrollView = UIScrollView()
     let mainStackView = UIStackView()
@@ -195,6 +195,14 @@ final class ShowDetailViewController: BaseViewController, BindableType {
             })
             .bind(to: episodesTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        episodesTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                if let cell = self.episodesTableView.cellForRow(at: indexPath) as? EpisodeTableViewCell {
+                    self.viewModel.goToEpisodeDetailsAction.execute(cell.episode)
+                }
+            }).disposed(by: disposeBag)
     }
 }
 

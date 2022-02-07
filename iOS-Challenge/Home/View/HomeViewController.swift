@@ -79,8 +79,9 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
-                let cell = self.tableView.cellForRow(at: indexPath) as? ShowTableViewCell
-                self.viewModel.goToShowDetailsAction.execute(cell?.show)
+                if let cell = self.tableView.cellForRow(at: indexPath) as? ShowTableViewCell {
+                    self.viewModel.goToShowDetailsAction.execute(cell.show)
+                }
             }).disposed(by: disposeBag)
         
     }

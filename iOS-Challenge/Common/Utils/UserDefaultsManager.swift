@@ -8,7 +8,7 @@
 import Foundation
 
 enum UserDefaultsKeys: String {
-    case favorites
+    case favourites
 }
 
 final class UserDefaultsManager {
@@ -26,30 +26,30 @@ final class UserDefaultsManager {
         defaults.removeObject(forKey: key.rawValue)
     }
     
-    func getFavorites() -> [String] {
-        return defaults.stringArray(forKey: UserDefaultsKeys.favorites.rawValue) ?? []
+    func getFavourites() -> [String] {
+        return defaults.stringArray(forKey: UserDefaultsKeys.favourites.rawValue) ?? []
     }
     
-    func addToFavorites(id: String) {
-        var currentFavorites = getFavorites()
-        currentFavorites.append(id)
-        set(key: .favorites, value: currentFavorites)
+    func addToFavourites(id: String) {
+        var currentFavourites = getFavourites()
+        currentFavourites.append(id)
+        set(key: .favourites, value: currentFavourites)
     }
     
-    func removeFromFavorites(id: String) {
-        var currentFavorites = getFavorites()
-        currentFavorites.removeAll(where: { $0 == id })
-        set(key: .favorites, value: currentFavorites)
+    func removeFromFavourites(id: String) {
+        var currentFavourites = getFavourites()
+        currentFavourites.removeAll(where: { $0 == id })
+        set(key: .favourites, value: currentFavourites)
     }
     
-    func toggleFavorites(id: String) {
-        var currentFavorites = getFavorites()
-        if currentFavorites.contains(where: { $0 == id }) {
-            currentFavorites.removeAll(where: { $0 == id })
+    func toggleFavourites(id: String) {
+        var currentFavourites = getFavourites()
+        if currentFavourites.contains(where: { $0 == id }) {
+            currentFavourites.removeAll(where: { $0 == id })
         } else {
-            currentFavorites.append(id)
+            currentFavourites.append(id)
         }
-        set(key: .favorites, value: currentFavorites)
+        set(key: .favourites, value: currentFavourites)
     }
     
 }

@@ -27,6 +27,9 @@
 		62C134EC27B0ED310026FABE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134EB27B0ED310026FABE /* UIColor+Extension.swift */; };
 		62C134EE27B0FD2A0026FABE /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134ED27B0FD2A0026FABE /* SearchResult.swift */; };
 		62C134F027B100CC0026FABE /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134EF27B100CC0026FABE /* UserDefaultsManager.swift */; };
+		62C134F627B106780026FABE /* FavouritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134F527B106780026FABE /* FavouritesCoordinator.swift */; };
+		62C134F827B1068C0026FABE /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134F727B1068C0026FABE /* FavouritesViewModel.swift */; };
+		62C134FA27B106980026FABE /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C134F927B106980026FABE /* FavouritesViewController.swift */; };
 		62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073A27AB4471005488BF /* AppDelegate.swift */; };
 		62EC073D27AB4471005488BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EC073C27AB4471005488BF /* SceneDelegate.swift */; };
 		62EC074427AB4471005488BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62EC074327AB4471005488BF /* Assets.xcassets */; };
@@ -82,6 +85,9 @@
 		62C134EB27B0ED310026FABE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		62C134ED27B0FD2A0026FABE /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		62C134EF27B100CC0026FABE /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		62C134F527B106780026FABE /* FavouritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesCoordinator.swift; sourceTree = "<group>"; };
+		62C134F727B1068C0026FABE /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
+		62C134F927B106980026FABE /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		62EC073727AB4471005488BF /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC073A27AB4471005488BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62EC073C27AB4471005488BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +203,40 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		62C134F127B106290026FABE /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				62C134F227B106520026FABE /* Coordinator */,
+				62C134F427B106620026FABE /* ViewModel */,
+				62C134F327B1065D0026FABE /* View */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		62C134F227B106520026FABE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				62C134F527B106780026FABE /* FavouritesCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		62C134F327B1065D0026FABE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62C134F927B106980026FABE /* FavouritesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		62C134F427B106620026FABE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				62C134F727B1068C0026FABE /* FavouritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		62EC072E27AB4470005488BF = {
 			isa = PBXGroup;
 			children = (
@@ -226,9 +266,10 @@
 				62EC073A27AB4471005488BF /* AppDelegate.swift */,
 				62EC073C27AB4471005488BF /* SceneDelegate.swift */,
 				62EC074327AB4471005488BF /* Assets.xcassets */,
-				62EC076A27AB4F3D005488BF /* Common */,
-				62EC076D27AB4F78005488BF /* Home */,
 				62EC074527AB4471005488BF /* LaunchScreen.storyboard */,
+				62EC076A27AB4F3D005488BF /* Common */,
+				62C134F127B106290026FABE /* Favourites */,
+				62EC076D27AB4F78005488BF /* Home */,
 				62C134C127AECB100026FABE /* Networking */,
 			);
 			path = "iOS-Challenge";
@@ -571,6 +612,8 @@
 				62EC077227AB507A005488BF /* HomeCoordinator.swift in Sources */,
 				62C134EA27B0E9220026FABE /* EpisodeDetailsViewModel.swift in Sources */,
 				62C134EE27B0FD2A0026FABE /* SearchResult.swift in Sources */,
+				62C134F827B1068C0026FABE /* FavouritesViewModel.swift in Sources */,
+				62C134FA27B106980026FABE /* FavouritesViewController.swift in Sources */,
 				62C134F027B100CC0026FABE /* UserDefaultsManager.swift in Sources */,
 				62C134DE27B088570026FABE /* Image.swift in Sources */,
 				62EC073B27AB4471005488BF /* AppDelegate.swift in Sources */,
@@ -578,6 +621,7 @@
 				62C134E627B0E7B80026FABE /* Array+Extension.swift in Sources */,
 				62C134E427B0D8360026FABE /* EpisodeTableViewCell.swift in Sources */,
 				62C134D627AEEB6F0026FABE /* HomeTabCoordinator.swift in Sources */,
+				62C134F627B106780026FABE /* FavouritesCoordinator.swift in Sources */,
 				62C134E227B0899D0026FABE /* Schedule.swift in Sources */,
 				62C134EC27B0ED310026FABE /* UIColor+Extension.swift in Sources */,
 				62EC077827AB5193005488BF /* BaseViewController.swift in Sources */,

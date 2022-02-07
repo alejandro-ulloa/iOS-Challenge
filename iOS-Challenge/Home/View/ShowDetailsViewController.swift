@@ -46,12 +46,12 @@ final class ShowDetailsViewController: BaseViewController, BindableType {
     }
     
     @objc func favoriteTapped() {
-        UserDefaultsManager.shared.toggleFavorites(id: "\(viewModel.show.id ?? 0)")
+        UserDefaultsManager.shared.toggleFavourites(id: "\(viewModel.show.id ?? 0)")
         loadFavorite()
     }
     
     func loadFavorite() {
-        self.navigationItem.rightBarButtonItem?.image = UserDefaultsManager.shared.getFavorites().contains(where: { $0 == "\(viewModel.show.id ?? 0)" }) ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        self.navigationItem.rightBarButtonItem?.image = UserDefaultsManager.shared.getFavourites().contains(where: { $0 == "\(viewModel.show.id ?? 0)" }) ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
     
     func setUpViews() {

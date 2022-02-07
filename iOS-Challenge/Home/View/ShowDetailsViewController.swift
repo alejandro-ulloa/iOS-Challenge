@@ -41,6 +41,17 @@ final class ShowDetailsViewController: BaseViewController, BindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = []
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(favoriteTapped))
+        loadFavorite()
+    }
+    
+    @objc func favoriteTapped() {
+        UserDefaultsManager.shared.toggleFavorites(id: "\(viewModel.show.id ?? 0)")
+        loadFavorite()
+    }
+    
+    func loadFavorite() {
+        self.navigationItem.rightBarButtonItem?.image = UserDefaultsManager.shared.getFavorites().contains(where: { $0 == "\(viewModel.show.id ?? 0)" }) ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
     
     func setUpViews() {

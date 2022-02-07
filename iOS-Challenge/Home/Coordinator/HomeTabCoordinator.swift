@@ -23,7 +23,7 @@ final class HomeTabCoordinator: TabBarCoordinator<HomeRoute> {
         homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "shows_tab".localized, image: UIImage(systemName: "list.bullet"), tag: 0)
         
         let favoritesCoordinator = HomeCoordinator()
-        favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "favorites_tab".localized, image: UIImage(systemName: "star"), tag: 0)
+        favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "favorites_tab".localized, image: UIImage(systemName: "star.fill"), tag: 0)
         
         super.init(rootViewController: MainViewController(), tabs: [homeCoordinator.strongRouter, favoritesCoordinator.strongRouter],
                    select: homeCoordinator)

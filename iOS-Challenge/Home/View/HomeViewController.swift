@@ -31,14 +31,17 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController!.navigationBar.sizeToFit()
+        navigationController?.navigationBar.sizeToFit()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     func setUpViews() {
         mainStackView.axis = .vertical
         mainStackView.distribution = .fillProportionally
         mainStackView.alignment = .center
-        mainStackView.backgroundColor = .white
         view.addSubview(mainStackView)
         
         tableView.rowHeight = 70
@@ -77,7 +80,7 @@ final class HomeViewController: BaseViewController, BindableType, UISearchContro
             .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
                 let cell = self.tableView.cellForRow(at: indexPath) as? ShowTableViewCell
-                self.viewModel.goToShowDetailsAction.execute(cell?.show?.id ?? 0)
+                self.viewModel.goToShowDetailsAction.execute(cell?.show)
             }).disposed(by: disposeBag)
         
     }

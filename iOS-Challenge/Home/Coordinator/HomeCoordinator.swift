@@ -10,7 +10,7 @@ import XCoordinator
 
 enum HomeRoute: Route {
     case home
-    case showDetails(showId: Int)
+    case showDetails(show: Show)
 }
 
 final class HomeCoordinator: NavigationCoordinator<HomeRoute> {
@@ -26,9 +26,9 @@ final class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             vc.bind(to: HomeViewModel(router: strongRouter))
             return .push(vc)
             
-        case let .showDetails(showId):
+        case let .showDetails(show):
             let vc = ShowDetailViewController()
-            vc.bind(to: ShowDetailViewModel())
+            vc.bind(to: ShowDetailViewModel(router: strongRouter, show: show))
             return .push(vc)
         }
     }

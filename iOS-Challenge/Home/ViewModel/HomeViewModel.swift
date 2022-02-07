@@ -40,9 +40,10 @@ final class HomeViewModel {
             }
     }
     
-    lazy var goToShowDetailsAction = Action<Int, Void> { [weak self] showId in
+    lazy var goToShowDetailsAction = Action<Show?, Void> { [weak self] show in
         guard let self = self else { return Observable.empty() }
-        return self.router.rx.trigger(.showDetails(showId: showId))
+        guard let show = show else { return Observable.empty() }
+        return self.router.rx.trigger(.showDetails(show: show))
     }
     
     func getNextPage() {

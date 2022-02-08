@@ -88,6 +88,7 @@
 		62C134F527B106780026FABE /* FavouritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesCoordinator.swift; sourceTree = "<group>"; };
 		62C134F727B1068C0026FABE /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
 		62C134F927B106980026FABE /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		62C134FC27B3197D0026FABE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		62EC073727AB4471005488BF /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EC073A27AB4471005488BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62EC073C27AB4471005488BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +249,7 @@
 		62EC072E27AB4470005488BF = {
 			isa = PBXGroup;
 			children = (
+				62C134FC27B3197D0026FABE /* README.md */,
 				62EC073927AB4471005488BF /* iOS-Challenge */,
 				62EC075027AB4471005488BF /* iOS-ChallengeTests */,
 				62EC075A27AB4471005488BF /* iOS-ChallengeUITests */,

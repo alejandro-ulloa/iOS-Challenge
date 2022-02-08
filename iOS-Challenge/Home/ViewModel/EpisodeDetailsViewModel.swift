@@ -12,12 +12,9 @@ import XCoordinator
 
 final class EpisodeDetailsViewModel {
     
-    var router: StrongRouter<HomeRoute>
-    
     var episode: Episode
     
-    init(router: StrongRouter<HomeRoute>, episode: Episode) {
-        self.router = router
+    init( episode: Episode) {
         self.episode = episode
     }
         

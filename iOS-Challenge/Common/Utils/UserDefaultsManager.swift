@@ -21,35 +21,56 @@ final class UserDefaultsManager {
     func set(key: UserDefaultsKeys, value: Any) {
         defaults.set(value, forKey: key.rawValue)
     }
-    
+
+    func setDecodedShows(shows: [Show]) {
+        do {
+            let encodedData = try JSONEncoder().encode(shows)
+            UserDefaultsManager.shared.set(key: .favourites, value: encodedData)
+        } catch {
+            debugPrint("Error encoding response")
+        }
+    }
+
     func remove(key: UserDefaultsKeys) {
         defaults.removeObject(forKey: key.rawValue)
     }
-    
-    func getFavourites() -> [String] {
-        return defaults.stringArray(forKey: UserDefaultsKeys.favourites.rawValue) ?? []
+
+    func get(key: UserDefaultsKeys) -> Any? {
+      return defaults.object(forKey: key.rawValue)
     }
     
-    func addToFavourites(id: String) {
-        var currentFavourites = getFavourites()
-        currentFavourites.append(id)
-        set(key: .favourites, value: currentFavourites)
-    }
-    
-    func removeFromFavourites(id: String) {
-        var currentFavourites = getFavourites()
-        currentFavourites.removeAll(where: { $0 == id })
-        set(key: .favourites, value: currentFavourites)
-    }
-    
-    func toggleFavourites(id: String) {
-        var currentFavourites = getFavourites()
-        if currentFavourites.contains(where: { $0 == id }) {
-            currentFavourites.removeAll(where: { $0 == id })
-        } else {
-            currentFavourites.append(id)
+    func getFavourites() -> [Show] {
+        var currentFavourites: [Show] = []
+        do {
+          let encodedData = get(key: .favourites) as? Data
+            currentFavourites = try JSONDecoder().decode([Show].self, from: encodedData ?? Data())
+        } catch {
+          debugPrint("fetchMegaDiscounts - Failed to decode mega discounts")
         }
-        set(key: .favourites, value: currentFavourites)
+
+        return currentFavourites
+    }
+    
+    func addToFavourites(show: Show) {
+        var currentFavourites = getFavourites()
+        currentFavourites.append(show)
+        setDecodedShows(shows: currentFavourites)
+    }
+    
+    func removeFromFavourites(id: Int) {
+        var currentFavourites = getFavourites()
+        currentFavourites.removeAll(where: { $0.id == id })
+        setDecodedShows(shows: currentFavourites)
+    }
+    
+    func toggleFavourites(show: Show) {
+        var currentFavourites = getFavourites()
+        if currentFavourites.contains(where: { $0.id == show.id }) {
+            currentFavourites.removeAll(where: { $0.id == show.id })
+        } else {
+            currentFavourites.append(show)
+        }
+        setDecodedShows(shows: currentFavourites)
     }
     
 }

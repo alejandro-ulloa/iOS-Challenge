@@ -12,7 +12,9 @@ import XCoordinator
 
 final class ShowDetailsViewModel {
     
-    var router: StrongRouter<HomeRoute>
+    var router: StrongRouter<HomeRoute>?
+
+    var favouritesRouter: StrongRouter<FavouritesRoute>?
     
     let showsService = ShowService()
     
@@ -27,6 +29,16 @@ final class ShowDetailsViewModel {
         self.show = show
         getEpisodesAction.execute(show.id)
         
+        episodesSubject.subscribe(onNext: { [weak self] episodes in
+            self?.seasons = episodes.map { $0.season ?? 0 } .removingDuplicates()
+        }).disposed(by: disposeBag)
+    }
+
+    init(router: StrongRouter<FavouritesRoute>, show: Show) {
+        self.favouritesRouter = router
+        self.show = show
+        getEpisodesAction.execute(show.id)
+
         episodesSubject.subscribe(onNext: { [weak self] episodes in
             self?.seasons = episodes.map { $0.season ?? 0 } .removingDuplicates()
         }).disposed(by: disposeBag)
@@ -50,7 +62,10 @@ final class ShowDetailsViewModel {
     lazy var goToEpisodeDetailsAction = Action<Episode?, Void> { [weak self] episode in
         guard let self = self else { return Observable.empty() }
         guard let episode = episode else { return Observable.empty() }
-        return self.router.rx.trigger(.episodeDetails(episode: episode))
+        if let router = self.router {
+            return router.rx.trigger(.episodeDetails(episode: episode))
+        }
+        return self.favouritesRouter?.rx.trigger(.episodeDetails(episode: episode)) ?? Observable.empty()
     }
     
 }

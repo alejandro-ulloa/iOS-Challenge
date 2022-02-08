@@ -34,7 +34,7 @@ final class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             
         case let .episodeDetails(episode):
             let vc = EpisodeDetailsViewController()
-            vc.bind(to: EpisodeDetailsViewModel(router: strongRouter, episode: episode))
+            vc.bind(to: EpisodeDetailsViewModel(episode: episode))
             return .present(vc)
         }
     }

@@ -26,3 +26,7 @@
 "schedule_label" = "Schedule";
 "time_label" = "Time:";
 "days_label" = "Days:";
+
+// Favourites tab
+
+"favourites_title" = "Favourites";

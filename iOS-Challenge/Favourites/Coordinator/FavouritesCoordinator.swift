@@ -10,6 +10,8 @@ import XCoordinator
 
 enum FavouritesRoute: Route {
     case favourites
+    case showDetails(show: Show)
+    case episodeDetails(episode: Episode)
 }
 
 final class FavouritesCoordinator: NavigationCoordinator<FavouritesRoute> {
@@ -22,8 +24,18 @@ final class FavouritesCoordinator: NavigationCoordinator<FavouritesRoute> {
         switch route {
         case .favourites:
             let vc = FavouritesViewController()
-            vc.bind(to: FavouritesViewModel())
+            vc.bind(to: FavouritesViewModel(router: strongRouter))
             return .push(vc)
+
+        case let .showDetails(show):
+            let vc = ShowDetailsViewController()
+            vc.bind(to: ShowDetailsViewModel(router: strongRouter, show: show))
+            return .push(vc)
+
+        case let .episodeDetails(episode):
+            let vc = EpisodeDetailsViewController()
+            vc.bind(to: EpisodeDetailsViewModel(episode: episode))
+            return .present(vc)
             
         }
     }

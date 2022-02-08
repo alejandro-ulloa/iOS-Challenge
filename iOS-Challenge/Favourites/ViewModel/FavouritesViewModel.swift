@@ -16,7 +16,7 @@ final class FavouritesViewModel {
 
     let showsService = ShowService()
 
-    var shows: [Show] = []
+    var favourites: [Show] = UserDefaultsManager.shared.getFavourites().sorted(by: {($0.name ?? "") < ($1.name ?? "")})
     var currentPage = 0
     let showsSubject = PublishSubject<[Show]>()
 
@@ -35,6 +35,13 @@ final class FavouritesViewModel {
     }
 
     func loadFavourites() {
-        showsSubject.onNext(UserDefaultsManager.shared.getFavourites())
+        favourites = UserDefaultsManager.shared.getFavourites().sorted(by: {($0.name ?? "") < ($1.name ?? "")})
+        showsSubject.onNext(favourites)
+    }
+
+    func removeFavouriteFrom(index: Int){
+        let showtoRemove = favourites[index]
+        UserDefaultsManager.shared.toggleFavourites(show: showtoRemove)
+        favourites.remove(at: index)
     }
 }

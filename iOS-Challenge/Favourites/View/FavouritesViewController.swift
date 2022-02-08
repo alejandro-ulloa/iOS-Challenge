@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RxSwift
 
-final class FavouritesViewController: BaseViewController, BindableType {
+final class FavouritesViewController: BaseViewController, BindableType, UITableViewDelegate {
 
     var viewModel: FavouritesViewModel!
 
@@ -42,6 +42,7 @@ final class FavouritesViewController: BaseViewController, BindableType {
         view.addSubview(mainStackView)
 
         tableView.rowHeight = 70
+        tableView.delegate = self
         tableView.register(ShowTableViewCell.self, forCellReuseIdentifier: ShowTableViewCell.identifier)
         mainStackView.addArrangedSubview(tableView)
     }
@@ -77,5 +78,21 @@ final class FavouritesViewController: BaseViewController, BindableType {
                 }
             }).disposed(by: disposeBag)
 
+    }
+
+
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] (_, _, completionHandler) in
+                // delete the item here
+                self?.viewModel.removeFavouriteFrom(index: indexPath.row)
+                self?.viewModel.loadFavourites()
+                completionHandler(true)
+            }
+            deleteAction.image = UIImage(systemName: "trash")
+            deleteAction.backgroundColor = .systemRed
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return configuration
     }
 }

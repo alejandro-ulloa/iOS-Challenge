@@ -172,7 +172,7 @@ final class ShowDetailsViewController: BaseViewController, BindableType {
         }
         
         summaryLabel.snp.makeConstraints {
-            $0.width.equalToSuperview()
+            $0.width.equalToSuperview().multipliedBy(0.9)
         }
         
         episodesTableView.snp.makeConstraints {

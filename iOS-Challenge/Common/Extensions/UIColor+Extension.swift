@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static let transparentBlack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.9)
+    static let transparentBlack = UIColor(red: 64/255, green: 0/255, blue: 105/255, alpha: 0.9)
 }
